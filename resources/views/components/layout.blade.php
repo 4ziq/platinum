@@ -18,9 +18,10 @@
      <link rel="stylesheet" href="{{ asset('css/argon.css?v=1.1.0') }}" type="text/css">
  </head>
 
+
  <body>
      {{-- SIDEBAR COMPONENT --}}
-     <x-sidebar/>
+     <x-sidebar />
 
      <div class="main-content" id="panel">
          {{-- TOPNAV COMPONENT --}}
@@ -33,11 +34,15 @@
          <div class="container-fluid mt--6">
              <div class="row">
                  <div class="col-xl-3 col-md-6">
-                    {{$slot}}
+                     {{ $slot }}
                  </div>
              </div>
          </div>
      </div>
+
+     {{-- FOOTER --}}
+     <x-footer />
+
      <!-- Argon Scripts -->
      <!-- Core -->
      <script src="{{ asset('vendor/jquery/dist/jquery.min.js') }}"></script>
