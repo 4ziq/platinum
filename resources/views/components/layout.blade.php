@@ -18,9 +18,9 @@
      <link rel="stylesheet" href="{{ asset('css/argon.css?v=1.1.0') }}" type="text/css">
  </head>
 
- <body class="bg-default">
+ <body>
      {{-- SIDEBAR COMPONENT --}}
-     <x-sidebar />
+     <x-sidebar/>
 
      <div class="main-content" id="panel">
          {{-- TOPNAV COMPONENT --}}

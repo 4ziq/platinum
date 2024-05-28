@@ -6,6 +6,6 @@ Route::get('/', function () {
     return view('scholar-scroll.index');
 });
 
-// Route::get('/login', function(){
-//     return view('login');
-// });
+Route::get('/publication', function(){
+    return view('scholar-scroll.publication');
+});
