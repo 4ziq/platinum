@@ -9,6 +9,7 @@ Route::get('/publication', function () {
     return view('scholar-scroll.publication');
 });
 
+//show  login
 Route::get('/login', function () {
     return view('users.login');
 });
