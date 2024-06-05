@@ -31,7 +31,7 @@
         </div>
 
         {{-- FOOTER MAIN --}}
-        <x-footer-main/>
+        <x-footer/>
     </body>
 
     <!-- Argon Scripts -->
