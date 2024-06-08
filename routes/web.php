@@ -5,24 +5,17 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 //route system main page
-Route::get('/', [PlatinumController::class, 'index']);
+Route::get('/', [PlatinumController::class, 'index'])->middleware('auth');
 
-// Show register platinum/create form
+//Show register platinum/create form
 Route::get('/register-user', [UserController::class, 'create']);
 
 //Create new user
 Route::post('/users', [UserController::class, 'store']);
 
+//show login form
+Route::get('/login', [UserController::class, 'login'])->middleware('guest');
 
-
-
-// Route::get('/publication', function () {
-//     return view('scholar-scroll.publication');
-// });
-
-//show  login
-// Route::get('/login', function () {
-//     return view('users.login');
-// });
-
+// log in user
+Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
