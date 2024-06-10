@@ -1,3 +1,4 @@
+{{-- login --}}
 <x-login-layout>
     <div class="container mt--8 pb-5">
         <div class="row justify-content-center">

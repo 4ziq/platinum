@@ -8,7 +8,7 @@ class PlatinumController extends Controller
 {
     //index
     public function index(){
-        return view('scholar-scroll.index');
+        return view('scholar-scroll.main');
     }
 
 }

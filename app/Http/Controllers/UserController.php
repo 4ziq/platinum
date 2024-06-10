@@ -11,7 +11,7 @@ class UserController extends Controller
 {
     // show login page
     public function login(){
-        return view('users.login');
+        return view('users.index');
     }
 
     // authenticate user
@@ -59,5 +59,13 @@ class UserController extends Controller
 
         //redirect
         return redirect('/register-user')->with('message', 'user created');
+    }
+
+    //shows profile page
+    public function profile($id){
+        $current_user_id = Auth()->user()->id;
+        // $profile = Profile::;
+
+        return view('users.profile');
     }
 }
