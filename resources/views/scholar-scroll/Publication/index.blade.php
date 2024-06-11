@@ -78,6 +78,8 @@
         </tbody>
         </table>
     </div>  
-    
+    {{-- <a href="{{route('publication.show')}}">
+        <button>Report</button>
+    </a> --}}
 </body>
 </html>

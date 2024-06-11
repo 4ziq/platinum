@@ -83,19 +83,7 @@ class ManagePublicationController extends Controller
         return view('scholar-scroll.Publication.index', ['publications' => $publications]);
     }
 
-    public function report()
-    {
-        $users = User::get();
-
-        $data = [
-            'title' => 'Users List',
-            'date' => date('m/d/Y'),
-            'users' => $users
-        ];
-
-        $date = date('m/d/Y');
-
-        $pdf = PDF::loadView('UserProfile.report', $data);
-        return $pdf->download("users-lists-{$date}.pdf");
-    }
+    // public function showReport(){
+    //     return view('scholar-scroll.publication.report');
+    // }
 }

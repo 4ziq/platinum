@@ -44,8 +44,10 @@ Route::put('/publication/{publication}', [ManagePublicationController::class, 'u
 //Delete publication data
 Route::delete('/publication/{publication}', [ManagePublicationController::class, 'destroy'])->name('publication.destroy');
 
-//Search 
+//Search with keywords
 Route::get('/publication/search', [ManagePublicationController::class, 'search'])->name('publication.search');
 
+//Generate report for publication
+//Route::get('/report', [ManagePublicationController::class, 'showReport'])->name('report.show');
 
 
