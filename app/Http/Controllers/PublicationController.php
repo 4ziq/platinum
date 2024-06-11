@@ -2,40 +2,61 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Publication;
 use Illuminate\Http\Request;
+use App\Models\Publication;
 
 class PublicationController extends Controller
 {
-    //index
-    public function show(){
-        return view('scholar-scroll.publication');
+    public function indux(){
+        $publication = Publication::all();
+        return view('publication.index', ['publication' => $publication]);
+       
     }
 
-    //create
     public function create(){
-        return view('scholar-scroll.addPublication');
+        return view('publication.create');
     }
 
-    //store
     public function store(Request $request){
-        $variable = $request->validation([
-            //validate data
-            'title' => 'required',
-            'company' => ['required', Rule::unique('listing', 'company')],
-            'location' => 'required',
-            'website' => 'required',
-            'email' => ['required', 'email'],
-            'tags' => 'required',
-            'description' => 'required'
+        $data = $request->validate([
+            'publication_author' => 'required',
+            'publication_title' => 'required',
+            'publication_genre' => 'required',
+            'publication_date' => 'required',
+            'publication_paper' => 'required',
+            'publication_publisher' => 'required',
+            'publication_pages' => 'required|numeric',
         ]);
 
-        if($request->hasFile('logo')){
-            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
-        }
-        $formFields['user_id']
+        $newPublication = Publication::create($data);
 
-        //store data in db
-        Publication::create($variable);
+        return redirect(route('publication.index'));
+    
+    }
+
+    public function edit(Publication $publication){
+        return view('publication.edit', ['publication' => $product]);
+
+    }
+
+    public function update(Publication $publication, Request $request){
+        $data = $request->validate([
+            'publication_author' => 'required',
+            'publication_title' => 'required',
+            'publication_genre' => 'required',
+            'publication_date' => 'required',
+            'publication_paper' => 'required',
+            'publication_publisher' => 'required',
+            'publication_pages' => 'required|numeric',
+        ]);
+
+        $publication->update($data);
+
+        return redirect(route('publication.index'))->wirh('success', 'Publication Updated Successfully');
+    }
+
+    public function destroy(Publication $publication){
+        $publication->delete();
+        return redirect(route('publication.index'))->with('success', 'Publication delete successfully');
     }
 }
