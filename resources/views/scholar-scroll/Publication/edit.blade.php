@@ -18,36 +18,37 @@
 
         @endif
     </div>
-    <form method="post" action="{{route('publication.update', ['publication' => $publication])}}">
+    <form method="POST" action="{{route('publication.update', $publication->id)}}">
         @csrf
-        @method('put')
+        @method('PUT')
+        
         <div>
             <label>Publication Author:</label>
-            <input type="pub_author" name="pub_author" placeholder="Author of Publication" value="{{$publication->publication_author}}" />
+            <input type="text" name="publication_author" placeholder="Author of Publication" value="{{$publication->publication_author}}" />
         </div>
         <div>
             <label>Publication Title:</label>
-            <input type="pub_title" name="pub_title" placeholder="Title of Publication" value="{{$publication->publication_title}}">
+            <input type="text" name="publication_title" placeholder="Title of Publication" value="{{$publication->publication_title}}">
         </div>
         <div>
             <label>Publication Genre:</label>
-            <input type="pub_genre" name="pub_genre" placeholder="Genre of Publication" value="{{$publication->publication_genre}}">
+            <input type="text" name="publication_genre" placeholder="Genre of Publication" value="{{$publication->publication_genre}}">
         </div>
         <div>
             <label>Publication Date:</label>
-            <input type="pub_date" name="pub_date" placeholder="Date of Publication" value="{{$publication->publication_date}}">
+            <input type="text" name="publication_date" placeholder="Date of Publication" value="{{$publication->publication_date}}">
         </div>
         <div>
             <label>Publication Paper:</label>
-            <input type="pub_paper" name="pub_paper" placeholder="Documents of Publication" value="{{$publication->publication_paper}}">
+            <input type="text" name="publication_paper" placeholder="Documents of Publication" value="{{$publication->publication_paper}}">
         </div>
         <div>
             <label>Publication Publisher:</label>
-            <input type="pub_publisher" name="pub_publisher" placeholder="Publisher of Publication" value="{{$publication->publication_publisher}}">
+            <input type="text" name="publication_publisher" placeholder="Publisher of Publication" value="{{$publication->publication_publisher}}">
         </div>
         <div>
             <label>Publication Pages:</label>
-            <input type="pub_pages" name="pub_pages" placeholder="Pages of Publication" value="{{$publication->publication_pages}}">
+            <input type="text" name="publication_pages" placeholder="Pages of Publication" value="{{$publication->publication_pages}}">
         </div>
         <div>
             <input type="submit" value="Update"/>

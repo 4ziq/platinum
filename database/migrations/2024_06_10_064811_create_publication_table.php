@@ -11,16 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('publication', function (Blueprint $table) {
+        Schema::create('publications', function (Blueprint $table) {
             $table->id();
-            $table->string('publication_author');
-            $table->string('publication_title');
-            $table->string('publication_genre');
-            $table->date('publication_date');
-            $table->string('publication_paper');
-            $table->string('publication_publisher');
-            $table->string('publication_keyword');
-            $table->integer('publication_pages');
+            $table->string('publication_author')->nullable();
+            $table->string('publication_title')->nullable();
+            $table->string('publication_genre')->nullable();
+            $table->date('publication_date')->nullable();
+            $table->string('publication_paper')->nullable();
+            $table->string('publication_publisher')->nullable();
+            $table->string('publication_keyword')->nullable();
+            $table->integer('publication_pages')->nullable();
+            $table->timestamps();
         });
     }
 

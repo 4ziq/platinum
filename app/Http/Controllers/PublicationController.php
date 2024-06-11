@@ -7,14 +7,14 @@ use App\Models\Publication;
 
 class PublicationController extends Controller
 {
-    public function indux(){
+    public function index(){
         $publication = Publication::all();
-        return view('publication.index', ['publication' => $publication]);
+        return view('scholar-scroll.Publication.index', ['publication' => $publication]);
        
     }
 
     public function create(){
-        return view('publication.create');
+        return view('scholar-scroll.Publication.create');
     }
 
     public function store(Request $request){
@@ -28,14 +28,14 @@ class PublicationController extends Controller
             'publication_pages' => 'required|numeric',
         ]);
 
-        $newPublication = Publication::create($data);
+        Publication::create($data);
 
         return redirect(route('publication.index'));
     
     }
 
     public function edit(Publication $publication){
-        return view('publication.edit', ['publication' => $product]);
+        return view('scholar-scroll.publication.edit', compact('publication'));
 
     }
 
@@ -52,7 +52,7 @@ class PublicationController extends Controller
 
         $publication->update($data);
 
-        return redirect(route('publication.index'))->wirh('success', 'Publication Updated Successfully');
+        return redirect(route('publication.index'))->with('success', 'Publication Updated Successfully');
     }
 
     public function destroy(Publication $publication){
