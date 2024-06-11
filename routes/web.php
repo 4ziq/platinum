@@ -8,10 +8,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PlatinumController::class, 'index']); //->middleware('auth')
 
 //Show register platinum/create form
-Route::get('/register-user', [UserController::class, 'create']);
+Route::get('/register-user', [PlatinumController::class, 'create']);
 
 //Create new user
-Route::post('/users', [UserController::class, 'store']);
+Route::post('/users', [PlatinumController::class, 'store']);
 
 //show login form
 Route::get('/login', [UserController::class, 'login']); //->middleware('guest')
@@ -20,4 +20,4 @@ Route::get('/login', [UserController::class, 'login']); //->middleware('guest')
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
 //shows profile page
-Route::get('/profile', [UserController::class, 'profile']);
+Route::get('/profile', [PlatinumController::class, 'profile']);

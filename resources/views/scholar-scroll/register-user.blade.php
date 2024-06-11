@@ -12,10 +12,10 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label class="form-control-label">Name</label>
-                            <input type="text" class="form-control" name="name" placeholder="Insert Platinum Name"
-                                value="{{ old('name') }}">
+                            <input type="text" class="form-control" name="platinum_name" placeholder="Insert Platinum Name"
+                                value="{{ old('platinum_name') }}">
 
-                            @error('name')
+                            @error('platinum_name')
                                 <p class="text-red text-xs mt-1">{{ $message }}</p>
                             @enderror
                         </div>
@@ -23,10 +23,10 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label class="form-control-label">Email</label>
-                            <input type="email" class="form-control" name="email"
-                                placeholder="Insert Platinum email" value="{{ old('email') }}">
+                            <input type="email" class="form-control" name="platinum_email"
+                                placeholder="Insert Platinum email" value="{{ old('platinum_email') }}">
 
-                            @error('email')
+                            @error('platinum_email')
                                 <p class="text-red text-xs mt-1">{{ $message }}</p>
                             @enderror
                         </div>
