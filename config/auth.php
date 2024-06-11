@@ -40,6 +40,12 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'platinum' => [
+            // ''redirectTo => '';
+            'driver' => 'session',
+            'provider' => 'platinum',
+        ]
     ],
 
     /*
@@ -64,6 +70,11 @@ return [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\User::class),
         ],
+
+        'platinum' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Platinum::class,
+        ]
 
         // 'users' => [
         //     'driver' => 'database',

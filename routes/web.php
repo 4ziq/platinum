@@ -10,10 +10,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PlatinumController::class, 'index']); //->middleware('auth')
 
 //Show register platinum/create form
-Route::get('/register-user', [UserController::class, 'create']);
+Route::get('/register-user', [PlatinumController::class, 'create']);
 
 //Create new user
-Route::post('/users', [UserController::class, 'store']);
+Route::post('/users', [PlatinumController::class, 'store']);
 
 //show login form
 Route::get('/login', [UserController::class, 'login']); //->middleware('guest')
@@ -22,7 +22,7 @@ Route::get('/login', [UserController::class, 'login']); //->middleware('guest')
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
 //shows profile page
-Route::get('/profile', [UserController::class, 'profile']);
+Route::get('/profile', [PlatinumController::class, 'profile']);
 
 
 //Module 3 Publication
@@ -48,15 +48,4 @@ Route::delete('/publication/{publication}', [ManagePublicationController::class,
 Route::get('/publication/search', [ManagePublicationController::class, 'search'])->name('publication.search');
 
 
-//
-//Route::get('/', [PlatinumController::class, 'index']);
 
-//Route::get('/publication', function () {
-    //return view('scholar-scroll.publication');
-//});
-
-//Route::get('/login', function () {
-    //return view('users.login');
-//});
-
-//Route::get('/', [PublicationController::class, 'show']);
