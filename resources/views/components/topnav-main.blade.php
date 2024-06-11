@@ -1,4 +1,5 @@
 <!-- Navbar -->
+{{-- for login layout --}}
 <nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
     <div class="container">
         <a class="navbar-brand" href="../../pages/dashboards/dashboard.html">

@@ -22,7 +22,7 @@
             <div class="collapse navbar-collapse" id="sidenav-collapse-main">
                 <!-- Nav items -->
                 <ul class="navbar-nav">
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link active" href="#navbar-dashboards" data-toggle="collapse" role="button"
                             aria-expanded="true" aria-controls="navbar-dashboards">
                             <i class="ni ni-shop text-primary"></i>
@@ -39,44 +39,23 @@
                                 </li>
                             </ul>
                         </div>
-                    </li>
-                </ul>
-                <!-- Divider -->
-                <hr class="my-3">
-                <!-- Heading -->
-                <h6 class="navbar-heading p-0 text-muted">Documentation</h6>
-                <!-- Navigation -->
-                <ul class="navbar-nav mb-md-3">
+                    </li> --}}
                     <li class="nav-item">
-                        <a class="nav-link"
-                            href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html"
-                            target="_blank">
-                            <i class="ni ni-spaceship"></i>
-                            <span class="nav-link-text">Getting started</span>
+                        <a class="nav-link" href="../../pages/widgets.html">
+                            <i class="ni ni-archive-2 text-green"></i>
+                            <span class="nav-link-text">Widgets</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"
-                            href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html"
-                            target="_blank">
-                            <i class="ni ni-palette"></i>
-                            <span class="nav-link-text">Foundation</span>
+                        <a class="nav-link" href="../../pages/charts.html">
+                            <i class="ni ni-chart-pie-35 text-info"></i>
+                            <span class="nav-link-text">Charts</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"
-                            href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html"
-                            target="_blank">
-                            <i class="ni ni-ui-04"></i>
-                            <span class="nav-link-text">Components</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"
-                            href="https://demos.creative-tim.com/argon-dashboard/docs/plugins/charts.html"
-                            target="_blank">
-                            <i class="ni ni-chart-pie-35"></i>
-                            <span class="nav-link-text">Plugins</span>
+                        <a class="nav-link" href="../../pages/calendar.html">
+                            <i class="ni ni-calendar-grid-58 text-red"></i>
+                            <span class="nav-link-text">Calendar</span>
                         </a>
                     </li>
                 </ul>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PlatinumController;
+<<<<<<< HEAD
 use App\Http\Controllers\PublicationController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,3 +31,25 @@ Route::put('/publication/{publication}/destroy', [PublicationController::class, 
 //});
 
 //Route::get('/', [PublicationController::class, 'show']);
+=======
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Route;
+
+//route system main page
+Route::get('/', [PlatinumController::class, 'index']); //->middleware('auth')
+
+//Show register platinum/create form
+Route::get('/register-user', [UserController::class, 'create']);
+
+//Create new user
+Route::post('/users', [UserController::class, 'store']);
+
+//show login form
+Route::get('/login', [UserController::class, 'login']); //->middleware('guest')
+
+// log in user
+Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+//shows profile page
+Route::get('/profile', [UserController::class, 'profile']);
+>>>>>>> 732de2b5a673bc39dc7b1cbe9812126915b4c248

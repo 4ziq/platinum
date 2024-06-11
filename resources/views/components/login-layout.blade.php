@@ -21,11 +21,17 @@
 <body>
 
     <body class="bg-default">
-        <x-topnav-login />
+        {{-- TOPNAV MAIN --}}
+        <x-topnav-main />
+
         {{-- MAIN CONTENT --}}
         <div class="main-content">
             <x-header-main />
+            {{$slot}}
         </div>
+
+        {{-- FOOTER MAIN --}}
+        <x-footer/>
     </body>
 
     <!-- Argon Scripts -->
