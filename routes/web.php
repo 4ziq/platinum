@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\PlatinumController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\PublicationController;
+use App\Http\Controllers\ManagePublicationController;
+use Illuminate\Database\Capsule\Manager;
 use Illuminate\Support\Facades\Route;
 
 //route system main page
@@ -26,22 +27,25 @@ Route::get('/profile', [UserController::class, 'profile']);
 
 //Module 3 Publication
 //route system main page
-Route::get('/publication', [PublicationController::class, 'index'])->name('publication.index');
+Route::get('/publication', [ManagePublicationController::class, 'index'])->name('publication.index');
 
 //Create new publication
-Route::get('/publication/create', [PublicationController::class, 'create'])->name('publication.create');
+Route::get('/publication/create', [ManagePublicationController::class, 'create'])->name('publication.create');
 
 //Save data in database
-Route::post('/publication', [PublicationController::class, 'store'])->name('publication.store');
+Route::post('/publication', [ManagePublicationController::class, 'store'])->name('publication.store');
 
 //Edit and get publication data
-Route::get('/publication/{publication}/edit', [PublicationController::class, 'edit'])->name('publication.edit');
+Route::get('/publication/{publication}/edit', [ManagePublicationController::class, 'edit'])->name('publication.edit');
 
 //Update publication data
-Route::put('/publication/{publication}', [PublicationController::class, 'update'])->name('publication.update');
+Route::put('/publication/{publication}', [ManagePublicationController::class, 'update'])->name('publication.update');
 
 //Delete publication data
-Route::delete('/publication/{publication}', [PublicationController::class, 'destroy'])->name('publication.destroy');
+Route::delete('/publication/{publication}', [ManagePublicationController::class, 'destroy'])->name('publication.destroy');
+
+//Search 
+Route::get('/publication/search', [ManagePublicationController::class, 'search'])->name('publication.search');
 
 
 //

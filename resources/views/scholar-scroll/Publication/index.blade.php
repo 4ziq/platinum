@@ -1,25 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </head>
 <body>
+    <div class=container mt-5>
     <h1>Publication</h1>
     <div>
         @if(session()->has('success'))
-        <div>
+        <div class="alert alert-success">
             {{ session('success') }}
         </div>
         @endif <!-- Add endif to close the if directive -->
     </div>
-    <div>
+
+    <div class="mb-3">
         <div>
-            <a href="{{ route('publication.create') }}">Create Publication</a>
+            <a href="{{ route('publication.create') }}">Add New Publication</a>
         </div>
-        <table>
+
+    <br>
+    <form method="GET" action="{{route('publication.search')}}">
+        <input type="text" name='query' placeholder="Search for...">
+        <button type="submit">Search</button>
+    </form>
+
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
             <tr>
                 <th>Publication ID</th>
                 <th>Publication Author</th>
@@ -32,6 +50,9 @@
                 <th>Edit</th> <!-- Add header for Edit -->
                 <th>Delete</th>
             </tr>
+            </thead>
+
+            <tbody>
             @foreach($publication as $publication)
             <tr>
                 <td>{{ $publication->id }}</td> <!-- Add ID column -->
@@ -54,7 +75,8 @@
                 </td>
             </tr>
             @endforeach
+        </tbody>
         </table>
-    </div>
+    </div>  
 </body>
 </html>

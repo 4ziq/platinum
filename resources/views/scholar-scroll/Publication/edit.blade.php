@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <style>
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,td{
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th{
+            background: #f2f2f2;
+        }
+
+        tr:hover{
+            background-color: #f5f5f5;
+        }
+    </style>
 </head>
 <body>
     <h1>Edit Publication</h1>

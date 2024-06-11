@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Publication;
 
-class PublicationController extends Controller
+class ManagePublicationController extends Controller
 {
     public function index(){
         $publication = Publication::all();
@@ -58,5 +58,27 @@ class PublicationController extends Controller
     public function destroy(Publication $publication){
         $publication->delete();
         return redirect(route('publication.index'))->with('success', 'Publication delete successfully');
+    }
+
+    public function search(Request $request){
+        $query = $request->input('query');
+        $publications = Publication::where('publication_title', 'like', '%$query%')
+                                    ->orWhere('publication_author', 'like', '%$query%')
+                                    ->orWhere('publication_genre', 'like', '%$query%')
+                                    ->orWhere('publication_publisher', 'like', '%$query%')
+                                    ->get();
+
+        //Check if any result is found
+        if($publications->isEmpty()){
+            //return to view which says no result found
+            //return view('scholar-scroll.Publication.index')->with('message', 'No results were found.');
+
+            return view('scholar-scroll.Publication.index',[
+                'publications' => $publications,
+                'message' => 'No results found.'
+            ]);
+        }
+
+        return view('scholar-scroll.Publication.index', ['publications' => $publications]);
     }
 }
