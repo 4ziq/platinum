@@ -14,26 +14,26 @@ return new class extends Migration
         Schema::dropIfExists('platinum'); //added
         Schema::create('platinum', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->date('date_of_birth');
-            $table->string('gender');
-            $table->string('race');
-            $table->string('citizenship');
-            $table->string('religion');
-            $table->string('marital_status');
-            $table->string('employment_status');
-            $table->string('monthly_income');
-            $table->string('address');
-            $table->string('address');
-            $table->string('phone_num');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('education_level');
-            $table->string('field_of_expertise');
-            $table->string('university');
-            $table->string('supervisor');
-            $table->string('supervisor_email');
-            $table->string('package_type');
+            $table->string('platinum_name');
+            $table->date('platinum_date_of_birth');
+            $table->string('platinum_gender');
+            $table->string('platinum_race');
+            $table->string('platinum_citizenship');
+            $table->string('platinum_religion');
+            $table->string('platinum_marital_status');
+            $table->string('platinum_employment_status');
+            $table->string('platinum_monthly_income');
+            $table->string('platinum_address');
+            $table->string('platinum_address');
+            $table->string('platinum_phone_num');
+            $table->string('platinum_email')->unique();
+            $table->string('platinum_password');
+            $table->string('platinum_education_level');
+            $table->string('platinum_field_of_expertise');
+            $table->string('platinum_university');
+            $table->string('platinum_supervisor');
+            $table->string('platinum_supervisor_email');
+            $table->string('platinum_package_type');
             $table->rememberToken();
         });
     }
