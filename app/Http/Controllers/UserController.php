@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Session\Session;
+use App\Models\Platinum;
 
 class UserController extends Controller
 {
@@ -27,18 +28,18 @@ class UserController extends Controller
 
         if (Auth::guard('platinum')->attempt(['platinum_email' => $request->email, 'password' => $request->password])) {
             return redirect()->intended('/');
-        }else if(Auth::guard('staff')->attempt(['staff_email' => $request->email, 'password' => $request->password])){
+        } else if (Auth::guard('staff')->attempt(['staff_email' => $request->email, 'password' => $request->password])) {
             return redirect()->intended('/');
-        }else if(Auth::guard('mentor')->attempt(['mentor_email' => $request->email, 'password' => $request->password])){
+        } else if (Auth::guard('mentor')->attempt(['mentor_email' => $request->email, 'password' => $request->password])) {
             return redirect()->intended('/');
-        }else{
-            return back()->withErrors(['email'=>'Invalid Credentials'])->onlyInput('email');
+        } else {
+            return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
         }
-        
     }
 
     // logout
-    public function logout(Request $request){
+    public function logout(Request $request)
+    {
         Auth::logout();
 
         $request->session()->invalidate();

@@ -3,8 +3,8 @@
     <div class="scrollbar-inner">
         <!-- Brand -->
         <div class="sidenav-header d-flex align-items-center">
-            <a class="navbar-brand" href="../../pages/dashboards/dashboard.html">
-                <img src="../../assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
+            <a class="navbar-brand" href="/">
+                <img src="/public/logo.png" class="navbar-brand-img" alt="...">
             </a>
             <div class="ml-auto">
                 <!-- Sidenav toggler -->
@@ -40,24 +40,64 @@
                             </ul>
                         </div>
                     </li> --}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../pages/widgets.html">
-                            <i class="ni ni-archive-2 text-green"></i>
-                            <span class="nav-link-text">Widgets</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../pages/charts.html">
-                            <i class="ni ni-chart-pie-35 text-info"></i>
-                            <span class="nav-link-text">Charts</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../pages/calendar.html">
-                            <i class="ni ni-calendar-grid-58 text-red"></i>
-                            <span class="nav-link-text">Calendar</span>
-                        </a>
-                    </li>
+                    @if (auth()->guard('staff')->user() != null)
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#navbar-dashboards" data-toggle="collapse" role="button"
+                                aria-expanded="true" aria-controls="navbar-dashboards">
+                                <i class="ni ni-archive-2 text-green"></i>
+                                <span class="nav-link-text">Platinum</span>
+                            </a>
+                            <div class="collapse show" id="navbar-dashboards">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="/create" class="nav-link">Add Platinum</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    @elseif(auth()->guard('mentor')->user() != null)
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">
+                                <i class="ni ni-archive-2 text-green"></i>
+                                <span class="nav-link-text">Platinum</span>
+                            </a>
+                        </li>
+                    @else
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#navbar-dashboards" data-toggle="collapse" role="button"
+                                aria-expanded="true" aria-controls="navbar-dashboards">
+                                <i class="ni ni-archive-2 text-green"></i>
+                                <span class="nav-link-text">Publications</span>
+                            </a>
+                            <div class="collapse show" id="navbar-dashboards">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="/" class="nav-link">Add Publication</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/" class="nav-link active">Edit Publication</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#navbar-dashboards" data-toggle="collapse" role="button"
+                                aria-expanded="true" aria-controls="navbar-dashboards">
+                                <i class="ni ni-chart-pie-35 text-info"></i>
+                                <span class="nav-link-text">Expert Domain</span>
+                            </a>
+                            <div class="collapse show" id="navbar-dashboards">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="/" class="nav-link">Add Expert Domain</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/" class="nav-link active">Edit Expert Domain</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    @endif
                 </ul>
             </div>
         </div>
