@@ -14,27 +14,27 @@ return new class extends Migration
         Schema::dropIfExists('platinum'); //added
         Schema::create('platinum', function (Blueprint $table) {
             $table->id();
-            $table->string('platinum_name');
-            $table->date('platinum_date_of_birth');
-            $table->string('platinum_gender');
-            $table->string('platinum_race');
-            $table->string('platinum_citizenship');
-            $table->string('platinum_religion');
-            $table->string('platinum_marital_status');
-            $table->string('platinum_employment_status');
-            $table->string('platinum_monthly_income');
-            $table->string('platinum_address');
-            $table->string('platinum_address');
-            $table->string('platinum_phone_num');
-            $table->string('platinum_email')->unique();
-            $table->string('platinum_password');
-            $table->string('platinum_education_level');
-            $table->string('platinum_field_of_expertise');
-            $table->string('platinum_university');
-            $table->string('platinum_supervisor');
-            $table->string('platinum_supervisor_email');
-            $table->string('platinum_package_type');
-            $table->rememberToken();
+            $table->string('platinum_name')->nullable();
+            $table->date('platinum_date_of_birth')->nullable();
+            $table->string('platinum_gender')->nullable();
+            $table->string('platinum_race')->nullable();
+            $table->string('platinum_citizenship')->nullable();
+            $table->string('platinum_religion')->nullable();
+            $table->string('platinum_marital_status')->nullable();
+            $table->string('platinum_employment_status')->nullable();
+            $table->string('platinum_monthly_income')->nullable();
+            $table->string('platinum_address')->nullable();
+            $table->string('platinum_phone_num')->nullable();
+            $table->string('platinum_email')->unique()->nullable();
+            $table->string('platinum_password')->nullable();
+            $table->string('platinum_education_level')->nullable();
+            $table->string('platinum_field_of_expertise')->nullable();
+            $table->string('platinum_university')->nullable();
+            $table->string('platinum_supervisor')->nullable();
+            $table->string('platinum_supervisor_email')->nullable();
+            $table->string('platinum_package_type')->nullable();
+            $table->rememberToken()->nullable();
+            $table->timestamps();
         });
     }
 
