@@ -9,8 +9,9 @@ use Illuminate\Support\Facades\Route;
 //route system main page
 Route::get('/', [PlatinumController::class, 'index']); //->middleware('auth')
 
+// ------------------------------------------------------MODULE 1 MANAGE USER PROFILE ROUTE --------------------------------------------------------------------- //
 //Show register platinum/create form
-Route::get('/register-user', [PlatinumController::class, 'create']);
+Route::get('/create', [PlatinumController::class, 'create']);
 
 //Create new user
 Route::post('/users', [PlatinumController::class, 'store']);
@@ -24,8 +25,17 @@ Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 //shows profile page
 Route::get('/profile', [PlatinumController::class, 'profile']);
 
+//shows edit profile page
+Route::get('/profile/{platinum}/edit', [PlatinumController::class, 'edit']);
 
-//Module 3 Publication
+//update profile page
+Route::put('/profile/{platinum}', [PlatinumController::class, 'update']);
+
+//logout
+Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+
+
+// ------------------------------------------------------MODULE 3 PUBLICATION ROUTE --------------------------------------------------------------------- //
 //route system main page
 Route::get('/publication', [ManagePublicationController::class, 'index'])->name('publication.index');
 
