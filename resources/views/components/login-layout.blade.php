@@ -22,7 +22,7 @@
 
     <body class="bg-default">
         {{-- TOPNAV MAIN --}}
-        <x-topnav-main />
+        {{-- <x-topnav-main /> --}}
 
         {{-- MAIN CONTENT --}}
         <div class="main-content">

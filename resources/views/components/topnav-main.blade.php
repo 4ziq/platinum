@@ -2,13 +2,13 @@
 {{-- for login layout --}}
 <nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
     <div class="container">
-        <a class="navbar-brand" href="../../pages/dashboards/dashboard.html">
+        {{-- <a class="navbar-brand" href="../../pages/dashboards/dashboard.html">
             <img src="../../assets/img/brand/white.png">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse"
             aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> --}}
         <div class="navbar-collapse navbar-custom-collapse collapse" id="navbar-collapse">
             <div class="navbar-collapse-header">
                 <div class="row">
@@ -27,7 +27,7 @@
                     </div>
                 </div>
             </div>
-            <ul class="navbar-nav mr-auto">
+            {{-- <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a href="../../pages/dashboards/dashboard.html" class="nav-link">
                         <span class="nav-link-inner--text">Dashboard</span>
@@ -53,9 +53,9 @@
                         <span class="nav-link-inner--text">Lock</span>
                     </a>
                 </li>
-            </ul>
+            </ul> --}}
             <hr class="d-lg-none" />
-            <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+            {{-- <ul class="navbar-nav align-items-lg-center ml-lg-auto">
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="https://www.facebook.com/creativetim" target="_blank"
                         data-toggle="tooltip" data-original-title="Like us on Facebook">
@@ -93,7 +93,7 @@
                         <span class="nav-link-inner--text">Purchase now</span>
                     </a>
                 </li>
-            </ul>
+            </ul> --}}
         </div>
     </div>
 </nav>

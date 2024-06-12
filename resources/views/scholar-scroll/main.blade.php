@@ -1,3 +1,3 @@
 <x-layout>
-    <p>test</p>
+    {{-- <p>test</p> --}}
 </x-layout>
