@@ -60,4 +60,7 @@ Route::get('/publication/search', [ManagePublicationController::class, 'search']
 //Generate report for publication
 Route::get('/report', [ManagePublicationController::class, 'showReport'])->name('publication.show');
 
+//Mentor index page 
+//Route::get('/publication/mentor', [ManagePublicationController::class, 'mentor'])->name('publication.mentor');
+
 

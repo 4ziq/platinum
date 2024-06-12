@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Platinum Index Page</title>
+    <title>Mentor Index Page</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -18,7 +18,7 @@
     <div class=container mt-5>
     <h1>Publication</h1>
 
-    <!-- Search form -->
+    <!-- Search function-->
     <form method="GET" action="{{route('publication.search')}}" class="mb-3">
         <div class="input-group">
             <input type="text" name="query" class="form-control" placeholder="Enter keyword for title..." value="{{request()->input('query')}}">
@@ -27,22 +27,17 @@
             </div>
         </div>
     </form>
-    <div>
 
+    <div> 
         @if(session()->has('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
-        @endif <!-- Add endif to close the if directive -->
+        @endif 
     </div>
 
+{{-- Display publication data --}}
     <div class="mb-3">
-        <div>
-            <a href="{{ route('publication.create') }}">Add New Publication</a>
-        </div>
-
-    <br>
-   
         <table class="table table-striped table-bordered">
             <thead class="thead-dark">
             <tr>
@@ -71,15 +66,8 @@
                 <td>{{ $publication->publication_publisher }}</td>
                 <td>{{ $publication->publication_pages }}</td>
                 <td>
-                    <a href="{{ route('publication.edit', ['publication' => $publication->id]) }}" class="btn btn-primary btn-sm">Edit</a>
                 </td>
                 <td>
-                    <form method="post" action="{{ route('publication.destroy', ['publication' => $publication->id]) }}">
-                        @csrf
-                        @method('delete')
-                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                        {{-- <input type="submit" value="Delete"/> --}}
-                    </form>
                 </td>
             </tr>
             @endforeach
@@ -87,10 +75,12 @@
         </table>
     </div>  
 
+    {{-- To show report --}}
     <a href="{{route('publication.show')}}">
         <button type="submit" class="btn btn-primary btn-sm">Report</button>
     </a>
 
+    {{-- To return back to index page --}}
     <a href="{{route('publication.index')}}">
         <button type="submit" class="btn btn-secondary btn-sm">Back</button>
     </a>

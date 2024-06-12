@@ -28,6 +28,7 @@
     @endif
     </div>
 
+    {{-- Create and input publication data --}}
     <form method="POST" action="{{route('publication.store')}}">
         @csrf
         <div class="form-group">
@@ -62,5 +63,10 @@
             <button type="submit" class="btn btn-primary btn-sm">Save new publication</button>
         </div>
     </form>
+
+    {{-- Back button to return to index page --}}
+    <a href="{{route('publication.index')}}">
+        <br><button type="submit" class="btn btn-secondary btn-sm">Back</button>
+    </a>
 </body>
 </html>

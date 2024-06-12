@@ -6,6 +6,7 @@
 </head>
 
 <body>
+    {{-- Show publication data as report --}}
     <div class=container mt-5>
     <h1>Publication Report</h1>
     <br>
@@ -38,6 +39,9 @@
             @endforeach
         </tbody>
     </table>
+
+    {{-- Back button to return to index page --}}
+    <a href="{{route('publication.index')}}" class="btn btn-secondary btn-sm">Back</a>
     </div>
 </body>
 </html>

@@ -29,6 +29,7 @@
         @endif
     </div>
 
+    {{-- Edit publication data --}}
     <form method="POST" action="{{route('publication.update', $publication->id)}}">
         @csrf
         @method('PUT')
@@ -62,8 +63,18 @@
             <input type="text" class="form-control" id="publication_pages" name="publication_pages" placeholder="Pages of Publication" value="{{$publication->publication_pages}}">
         </div>
         <div>
+            {{-- Save changes --}}
             <button type="submit" class="btn btn-primary">Save Changes</button>
+
+             {{-- Back button to return to index page --}}
+            <a href="{{route('publication.index')}}">
+                <button type="submit" class="btn btn-secondary btn-sm">Back</button>
+            </a>
+
         </div>
+
+       
+        
         
 
     </form>

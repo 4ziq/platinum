@@ -87,4 +87,9 @@ class ManagePublicationController extends Controller
         $publications = Publication::all(); 
         return view('scholar-scroll.Publication.report', compact('publications'));
     }
+
+    // public function mentor(){
+    //     $publications = Publication::all();
+    //     return view('scholar-scroll.Publication.mentor', compact('publications'));
+    // }
 }
