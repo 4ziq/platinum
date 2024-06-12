@@ -48,6 +48,6 @@ Route::delete('/publication/{publication}', [ManagePublicationController::class,
 Route::get('/publication/search', [ManagePublicationController::class, 'search'])->name('publication.search');
 
 //Generate report for publication
-//Route::get('/report', [ManagePublicationController::class, 'showReport'])->name('report.show');
+Route::get('/report', [ManagePublicationController::class, 'showReport'])->name('publication.show');
 
 
