@@ -9,8 +9,8 @@ use Barryvdh\DomPDF\Facade\Pdf;
 class ManagePublicationController extends Controller
 {
     public function index(){
-        $publication = Publication::all();
-        return view('scholar-scroll.Publication.index', ['publication' => $publication]);
+        $publications = Publication::all();
+        return view('scholar-scroll.Publication.index', compact('publications'));
        
     }
 
@@ -36,7 +36,7 @@ class ManagePublicationController extends Controller
     }
 
     public function edit(Publication $publication){
-        return view('scholar-scroll.publication.edit', compact('publication'));
+        return view('scholar-scroll.Publication.edit', compact('publication'));
 
     }
 
@@ -63,10 +63,10 @@ class ManagePublicationController extends Controller
 
     public function search(Request $request){
         $query = $request->input('query');
-        $publications = Publication::where('publication_title', 'like', '%$query%')
-                                    ->orWhere('publication_author', 'like', '%$query%')
-                                    ->orWhere('publication_genre', 'like', '%$query%')
-                                    ->orWhere('publication_publisher', 'like', '%$query%')
+        $publications = Publication::where('publication_title', 'like', '%' . $query .'%')
+                                    ->orWhere('publication_author', 'like', '%' . $query . '%')
+                                    ->orWhere('publication_genre', 'like', '%' . $query . '%')
+                                    ->orWhere('publication_publisher', 'like', '%' . $query . '%')
                                     ->get();
 
         //Check if any result is found
@@ -76,14 +76,15 @@ class ManagePublicationController extends Controller
 
             return view('scholar-scroll.Publication.index',[
                 'publications' => $publications,
-                'message' => 'No results found.'
+                'message' => 'No results found for " ' . $query .' ".'
             ]);
         }
 
         return view('scholar-scroll.Publication.index', ['publications' => $publications]);
     }
 
-    // public function showReport(){
-    //     return view('scholar-scroll.publication.report');
-    // }
+    public function showReport(){
+        $publications = Publication::all(); 
+        return view('scholar-scroll.Publication.report', compact('publications'));
+    }
 }

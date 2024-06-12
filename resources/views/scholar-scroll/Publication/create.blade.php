@@ -59,7 +59,7 @@
             <input type="text" class="form-control" id="publication_pages" name="publication_pages" placeholder="Pages of Publication">
         </div>
         <div>
-            <br><br><input type="submit" value="Save new publication"/>
+            <button type="submit" class="btn btn-primary btn-sm">Save new publication</button>
         </div>
     </form>
 </body>

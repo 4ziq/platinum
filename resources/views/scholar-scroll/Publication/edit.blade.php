@@ -62,7 +62,7 @@
             <input type="text" class="form-control" id="publication_pages" name="publication_pages" placeholder="Pages of Publication" value="{{$publication->publication_pages}}">
         </div>
         <div>
-            <input type="submit" value="Update"/>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
         </div>
         
 
