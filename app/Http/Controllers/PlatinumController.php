@@ -19,7 +19,7 @@ class PlatinumController extends Controller
     //show registration form
     public function create()
     {
-        return view('users.create');
+        return view('scholar-scroll.users.create');
     }
 
     // create new user
@@ -70,11 +70,11 @@ class PlatinumController extends Controller
         // retrieve data based on user id
         $platinum = Platinum::where('id', $id)->get();
 
-        return view('users.profile', ['platinum'=>$platinum]);
+        return view('scholar-scroll.users.profile', ['platinum'=>$platinum]);
     }
 
     public function edit(Platinum $platinum){
-        return view('users.edit', ['platinum'=>$platinum]);
+        return view('scholar-scroll.users.edit', ['platinum'=>$platinum]);
     }
     
     // update profile
