@@ -23,7 +23,7 @@ Route::get('/login', [UserController::class, 'login']); //->middleware('guest')
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
 //shows profile page
-Route::get('/profile', [PlatinumController::class, 'profile']);
+Route::get('/profile', [UserController::class, 'profile']);
 
 //shows edit profile page
 Route::get('/profile/{platinum}/edit', [PlatinumController::class, 'edit']);

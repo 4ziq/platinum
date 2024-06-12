@@ -1,5 +1,5 @@
 <x-layout>
-    @foreach ($platinum as $platinum)
+    @foreach ($user as $platinum)
         <section>
             <div class="container py-2">
                 <div class="row">
