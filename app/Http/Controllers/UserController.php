@@ -13,7 +13,7 @@ class UserController extends Controller
     // show login page
     public function login()
     {
-        return view('users.index');
+        return view('scholar-scroll.users.index');
     }
 
     // authenticate user
@@ -25,10 +25,24 @@ class UserController extends Controller
             'password' => 'required'
         ]);
 
-        if (Auth::guard('platinum')->attempt(['platinum_email' => $request->email, 'password' => $request->password])) {
+        if (Auth::guard('platinum')->attempt(['platinum_email' => $request->email, 'platinum_password' => $request->password])) {
             return redirect()->intended('/');
+        }else if(Auth::guard('staff')->attempt(['staff_email' => $request->email, 'password' => $request->password])){
+
         }else{
             return back()->withErrors(['email'=>'Invalid Credentials'])->onlyInput('email');
         }
+        
+    }
+
+    // logout
+    public function logout(Request $request){
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/login');
     }
 }

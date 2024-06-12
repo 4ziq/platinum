@@ -45,7 +45,19 @@ return [
             // ''redirectTo => '';
             'driver' => 'session',
             'provider' => 'platinum',
-        ]
+        ],
+
+        'staff' => [
+            // ''redirectTo => '';
+            'driver' => 'session',
+            'provider' => 'staff',
+        ],
+
+        'mentor' => [
+            // ''redirectTo => '';
+            'driver' => 'session',
+            'provider' => 'mentor',
+        ],
     ],
 
     /*
@@ -74,8 +86,17 @@ return [
         'platinum' => [
             'driver' => 'eloquent',
             'model' => App\Models\Platinum::class,
-        ]
+        ],
 
+        'staff' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Staff::class,
+        ],
+
+        'mentor' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Mentor::class,
+        ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
