@@ -5,20 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Mentor extends Model
+class Staff extends Model
 {
     use HasFactory;
-    public $table = 'mentor';
-
+    public $table = 'staff';
     public function getAuthPassword(){
-        return $this->mentor_password;
+        return $this->staff_password;
     }
 
     protected function casts(): array
     {
         return [
             'email_verified_at' => 'datetime',
-            'mentor_password' => 'hashed',
+            'staff_password' => 'hashed',
         ];
     }
 }

@@ -25,10 +25,12 @@ class UserController extends Controller
             'password' => 'required'
         ]);
 
-        if (Auth::guard('platinum')->attempt(['platinum_email' => $request->email, 'platinum_password' => $request->password])) {
+        if (Auth::guard('platinum')->attempt(['platinum_email' => $request->email, 'password' => $request->password])) {
             return redirect()->intended('/');
         }else if(Auth::guard('staff')->attempt(['staff_email' => $request->email, 'password' => $request->password])){
-
+            return redirect()->intended('/');
+        }else if(Auth::guard('mentor')->attempt(['mentor_email' => $request->email, 'password' => $request->password])){
+            return redirect()->intended('/');
         }else{
             return back()->withErrors(['email'=>'Invalid Credentials'])->onlyInput('email');
         }
