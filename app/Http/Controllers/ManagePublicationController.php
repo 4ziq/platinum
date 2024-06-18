@@ -71,9 +71,7 @@ class ManagePublicationController extends Controller
 
         //Check if any result is found
         if($publications->isEmpty()){
-            //return to view which says no result found
-            //return view('scholar-scroll.Publication.index')->with('message', 'No results were found.');
-
+            //promt no result found
             return view('scholar-scroll.Publication.index',[
                 'publications' => $publications,
                 'message' => 'No results found for " ' . $query .' ".'
